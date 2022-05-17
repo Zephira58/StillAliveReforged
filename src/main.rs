@@ -3,6 +3,7 @@ use std::io::BufReader;
 use rodio::Source;
 use std::{thread, time::Duration};
 use std::io::Write;
+use color_please::*;
 
 fn scroll(s: &str) {
    for c in s.chars() {
@@ -48,7 +49,8 @@ fn main() {
    // so we need to keep the main thread alive while it's playing.
    // Press ctrl + C to stop the process once you're done.
 
-   print!("\x1B[2J");
+   print!("{esc}c", esc = 27 as char);
+   set_fg(Color::Yellow);
    prl("Forns FORM-29827281-12:\n");
    prl("Test Assesement Report\n");
    thread::sleep(Duration::from_secs(2));
@@ -64,33 +66,34 @@ fn main() {
    prl("Aperture Science\n");
    thread::sleep(Duration::from_secs(2));
    prl("We do what we must because we can.\n");
-   thread::sleep(Duration::from_secs(2));
+   thread::sleep(Duration::from_secs(1));
    prl("For the good of all of us.\n");
-   prl("Except the ones who are dead.\n");
-   thread::sleep(Duration::from_millis(500));
+   scroll("Except the ones who are dead.\n");
+   thread::sleep(Duration::from_millis(350));
    scroll("But there's no sense crying over every mistake.\n");
    scroll("You just keep on trying till you run out of cake.\n");
    scroll("And the Science gets done.\n");
    scroll("And you make a neat gun.\n");
    scroll("For the people who are still alive.\n");
    thread::sleep(Duration::from_secs(1));
-   println!("\x1B[2J");
+   print!("{esc}c", esc = 27 as char);
+   set_fg(Color::Yellow);
    prl("Personal File Addendun: \n");
    prl("Dear <<Subject Name Here>> \n");
-   prl("\n");
-   prl("\n");
+   prl("\n\n");
    thread::sleep(Duration::from_millis(100));
-   prl("\nI'm not even angry.\n");
-   thread::sleep(Duration::from_millis(1500));
+   scroll("\nI'm not even angry.\n");
+   thread::sleep(Duration::from_millis(1300));
    prl("I'm being so sincere right now.\n");
    thread::sleep(Duration::from_secs(2));
    prl("Even though you broke my heart.\nAnd killed me.\n");
-   thread::sleep(Duration::from_millis(2500));
+   thread::sleep(Duration::from_millis(2000));
    prl("And tore me to pieces.\n");
-   thread::sleep(Duration::from_secs(2));
+   thread::sleep(Duration::from_millis(1500));
    prl("And threw every piece into a fire.\n");
    thread::sleep(Duration::from_secs(1));
-   prl("As they burned it hurt because.\nI was so happy for you!\n");
+   fastscroll("As they burned it hurt because.\nI was so happy for you!\n");
+   thread::sleep(Duration::from_millis(450));
    scroll("Now these points of data make a beautiful line.\n");
    prl("And we're out of beta.\n");
    scroll("We're releasing on time.\n");
@@ -98,7 +101,8 @@ fn main() {
    scroll("Think of all the things we learned\n");
    prl("for the people who are still alive.\n");
    thread::sleep(Duration::from_secs(1));
-   print!("\x1B[2J");
+   print!("{esc}c", esc = 27 as char);
+   set_fg(Color::Yellow);
    scroll("Forns FORM-55551-6:\n");
    scroll("Personal File Addendun Addendun:\n");
    fastscroll("\nOne last thing:\n");
@@ -121,7 +125,8 @@ fn main() {
    scroll("There is research to be done.\n");
    scroll("On the people who are still alive.\n");
    thread::sleep(Duration::from_secs(2));
-   print!("\x1B[2J");
+   print!("{esc}c", esc = 27 as char);
+   set_fg(Color::Yellow);
    fastscroll("PS: And belive me i am\n");
    scroll("still alive.\n");
    thread::sleep(Duration::from_secs(1));

@@ -6,4 +6,5 @@ authors = ["Xanthus58 <xanthus58@protonmail.com>"]
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-rodio = "0.15.0"
+rodio = "0.15.0" 
+color_please = "0.2.1"
