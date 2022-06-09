@@ -1,3 +1,6 @@
+#![allow(unused_variables)]
+#![allow(non_snake_case)]
+#![allow(unused_must_use)]
 use std::fs::File;
 use std::io::BufReader;
 use rodio::Source;
